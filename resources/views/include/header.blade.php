@@ -18,6 +18,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('contact')}}">Контакты</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('reviews')}}">Отзывы</a>
+                </li>
             </ul>
         </div>
     </div>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ReviewsController;
 
 
 /*
@@ -29,6 +30,12 @@ Route::get('/contact', function () {
 })->name('contact');
 
 Route::post('/contact/submit', [ContactController::class,'submit'])->name('contact-submit');
+
+Route::get('/reviews', function () {
+    return view('reviews');
+})->name('reviews');
+
+Route::post('/reviews/submit', [ReviewsController::class,'submit'])->name('reviews-submit');
 
 
 
