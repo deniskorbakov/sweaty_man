@@ -22,7 +22,7 @@
                     <a class="nav-link" href="{{route('reviews')}}">Отзывы</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('reviews-data')}}">Отзывы</a>
+                    <a class="nav-link" href="{{route('reviews-data')}}">Посмотреть отзывы</a>
                 </li>
             </ul>
         </div>
