@@ -3,19 +3,19 @@
         <section class="mb-2">
 
             <a class="btn btn-floating m-0" target="_blank" href="https://github.com/deniskorbakov" role="button">
-                <img src="img/git.png">
+                <img src="/img/git.png">
             </a>
 
             <a class="btn btn-floating m-0" target="_blank" href="https://steamcommunity.com/id/VANDIJK9/" role="button">
-                <img src="img/steam.png">
+                <img src="/img/steam.png">
             </a>
 
             <a class="btn btn-floating m-0" target="_blank" href="https://vk.com/deniskorbakov" role="button">
-                <img src="img/vk.png">
+                <img src="/img/vk.png">
             </a>
 
             <a class="btn btn-floating m-0" target="_blank" href="https://www.youtube.com/channel/UCYmqAHkTyfkV36wTX8gfRsw" role="button">
-                <img src="img/youtube.png">
+                <img src="/img/youtube.png">
             </a>
 
         </section>

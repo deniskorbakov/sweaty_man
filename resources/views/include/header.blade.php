@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img src="img/chest_body_building_gym_fitness_icon_224827.svg" alt="" width="30" height="24">
+            <img src="/img/favicon.svg" alt="" width="30" height="24">
         </a>
         <a class="navbar-brand" href="#">SWEATY MAN FOR EVERYONE</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
