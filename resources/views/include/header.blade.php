@@ -19,7 +19,7 @@
                     <a class="nav-link" href="{{route('contact')}}">Контактная форма</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('reviews')}}">Отзывы</a>
+                    <a class="nav-link" href="{{route('reviews')}}">Оставить отзыв</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('reviews-data')}}">Посмотреть отзывы</a>
