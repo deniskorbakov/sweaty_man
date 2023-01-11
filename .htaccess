@@ -1,2 +1,4 @@
+DirectoryIndex public/index.php
+
 RewriteEngine on
 RewriteRule (.*) public/$1

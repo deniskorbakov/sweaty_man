@@ -36,6 +36,8 @@ Route::get('/reviews', function () {
 })->name('reviews');
 
 Route::post('/reviews/submit', [ReviewsController::class,'submit'])->name('reviews-submit');
+Route::get('/reviews/all', [ReviewsController::class,'allData'])->name('reviews-data');
+Route::get('/reviews/all/{id}', [ReviewsController::class,'showData'])->name('reviews-show');
 
 
 
