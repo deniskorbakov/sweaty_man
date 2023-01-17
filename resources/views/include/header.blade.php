@@ -13,7 +13,7 @@
                     <a class="nav-link active" aria-current="page" href="{{route('home')}}">Главная</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('about')}}">Мы</a>
+                    <a class="nav-link" href="{{route('about')}}">О нас</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('contact')}}">Контактная форма</a>
