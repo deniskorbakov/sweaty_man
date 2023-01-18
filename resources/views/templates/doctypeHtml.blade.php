@@ -17,7 +17,7 @@
 {{--header--}}
 @include('include.header')
 
-<main class="flex-shrink-0 mb-5">
+<main class="">
 @yield('content')
 </main>
 
