@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
             <img src="/img/favicon.svg" alt="" width="30" height="24">
@@ -25,6 +25,11 @@
                     <a class="nav-link" href="{{route('reviews-data')}}">Посмотреть отзывы</a>
                 </li>
             </ul>
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{route('authorization')}}">Авторизоваться</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </nav>
