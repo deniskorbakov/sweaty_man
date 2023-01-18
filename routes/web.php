@@ -39,6 +39,10 @@ Route::post('/reviews/submit', [ReviewsController::class,'submit'])->name('revie
 Route::get('/reviews/all', [ReviewsController::class,'allData'])->name('reviews-data');
 Route::get('/reviews/all/{id}', [ReviewsController::class,'showData'])->name('reviews-show');
 
+Route::get('/authorization', function () {
+    return view('authorization');
+})->name('authorization');
+
 
 
 
