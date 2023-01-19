@@ -10,18 +10,32 @@ class LoginController extends Controller
 
     public function store(Request $request)
     {
+
         $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required'
         ]);
 
-        if(Auth::attempt($credentials)) {
+        if(Auth::attempt($credentials,$request->boolean('checkbox'))) {
+            $request->session()->regenerate();
             return redirect()->route('userAccount');
         }
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'email' => trans('auth.failed')
         ]);
 
 
     }
+
+
+    public function exit(Request $request) {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect()->route('home');
+    }
+
 }
