@@ -84,25 +84,34 @@
                     <div class="card bg-glass">
                         <div class="card-body px-4 py-5 px-md-5">
                             <ul>
-                                @foreach($errors->all() as $message)
-                                    <li>{{$message}}</li>
-                                @endforeach
+{{--                                @foreach($errors->all() as $message)--}}
+{{--                                    <li>{{$message}}</li>--}}
+{{--                                @endforeach--}}
                             </ul>
                             <form action="{{route('register-store')}}" method="post">
                                 @csrf
                                 <div class="form-outline mb-4">
-                                    <input name="loginReg" type="text"  class="form-control" value="{{old('loginReg')}}" placeholder="Введите логин">
+                                    <input name="loginReg" type="text"  class="form-control"  value="{{old('loginReg')}}" placeholder="Введите логин">
+                                    @error('loginReg')
+                                    <div class="alert alert-danger mt-2">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <!-- Email input -->
                                 <div class="form-outline mb-4">
                                     <input name="emailReg" type="email" class="form-control" value="{{old('emailReg')}}" placeholder="Введите почту">
+                                    @error('emailReg')
+                                    <div class="alert alert-danger mt-2">{{ $message }}</div>
+                                    @enderror
 
                                 </div>
 
                                 <!-- Password input -->
                                 <div class="form-outline mb-4">
                                     <input name="passwordReg" type="password" class="form-control" value="{{old('passwordReg')}}" placeholder="Введите пароль">
+                                    @error('passwordReg')
+                                    <div class="alert alert-danger mt-2">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="text-center">
@@ -132,12 +141,18 @@
                                 <form action="{{route('login-store')}}" method="post">
                                     @csrf
                                     <div class="form-outline mb-4">
-                                        <input name="email" type="text" class="form-control" placeholder="Введите почту">
+                                        <input name="email" type="text" class="form-control" value="{{old('email')}}" placeholder="Введите почту">
+                                        @error('email')
+                                        <div class="alert alert-danger mt-2">{{ $message }}</div>
+                                        @enderror
                                     </div>
 
                                     <!-- Password input -->
                                     <div class="form-outline mb-4">
-                                        <input name="password" type="password" class="form-control" placeholder="Введите пароль">
+                                        <input name="password" type="password" class="form-control" value="{{old('password')}}" placeholder="Введите пароль">
+                                        @error('password')
+                                        <div class="alert alert-danger mt-2">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="modal-footer">
                                         <a type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Вернуться назад</a>
