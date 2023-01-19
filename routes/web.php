@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\RegisterController;
-
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,12 +40,10 @@ Route::post('/reviews/submit', [ReviewsController::class,'submit'])->name('revie
 Route::get('/reviews/all', [ReviewsController::class,'allData'])->name('reviews-data');
 Route::get('/reviews/all/{id}', [ReviewsController::class,'showData'])->name('reviews-show');
 
-//Route::get('/authorization', function () {
-//    return view('authorization');
-//})->name('authorization');
-
 Route::get('/authorization', [RegisterController::class,'create'])->name('authorization');
+
 Route::post('/register', [RegisterController::class,'store'])->name('register-store');
+Route::post('/login', [LoginController::class,'store'])->name('login-store');
 
 Route::view('/userAccount','userAccount')->middleware('auth')->name('userAccount');
 
