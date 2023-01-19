@@ -47,6 +47,10 @@ Route::post('/login', [LoginController::class,'store'])->name('login-store');
 
 Route::view('/userAccount','userAccount')->middleware('auth')->name('userAccount');
 
+Route::post('/exit', [LoginController::class,'exit'])->middleware('auth')->name('exit');
+
+
+
 
 
 
