@@ -83,6 +83,11 @@
 
                     <div class="card bg-glass">
                         <div class="card-body px-4 py-5 px-md-5">
+                            <ul>
+                                @foreach($errors->all() as $message)
+                                    <li>{{$message}}</li>
+                                @endforeach
+                            </ul>
                             <form action="{{route('register-store')}}" method="post">
                                 @csrf
                                 <div class="form-outline mb-4">
