@@ -3,6 +3,8 @@
 
 @section('title')О нас@endsection
 
+@section('link')<link rel="stylesheet" href="/css/aut.css">@endsection
+
 @section('content')
 
 
@@ -20,47 +22,6 @@
 
     <!-- Section: Design Block -->
 <section class="background-radial-gradient overflow-hidden">
-    <style>
-        .background-radial-gradient {
-            background-color: hsl(180, 1%, 22%);
-            background-image: radial-gradient(650px circle at 0% 0%,
-            hsl(210, 1%, 28%) 15%,
-            hsl(240, 1%, 36%) 35%,
-            hsl(240, 1%, 35%) 75%,
-            hsl(240, 1%, 32%) 80%,
-            transparent 100%),
-            radial-gradient(1250px circle at 100% 100%,
-                hsl(240, 1%, 33%) 15%,
-                hsl(220, 2%, 33%) 35%,
-                hsl(225, 2%, 40%) 75%,
-                hsl(240, 1%, 28%) 80%,
-                transparent 100%);
-        }
-
-        #radius-shape-1 {
-            height: 220px;
-            width: 220px;
-            top: -60px;
-            left: -130px;
-            background: radial-gradient(#3f3e3f, #b4b2b6);
-            overflow: hidden;
-        }
-
-        #radius-shape-2 {
-            border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
-            bottom: -60px;
-            right: -110px;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(#494949, #9f9da1);
-            overflow: hidden;
-        }
-
-        .bg-glass {
-            background-color: hsla(0, 0%, 100%, 0.9) !important;
-            backdrop-filter: saturate(200%) blur(25px);
-        }
-    </style>
 
         <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
             <div class="row gx-lg-5 align-items-center mb-5">
