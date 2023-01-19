@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ReviewsController;
+use App\Http\Controllers\RegisterController;
 
 
 /*
@@ -42,6 +43,11 @@ Route::get('/reviews/all/{id}', [ReviewsController::class,'showData'])->name('re
 Route::get('/authorization', function () {
     return view('authorization');
 })->name('authorization');
+
+Route::post('/register', [RegisterController::class,'store'])->name('register-store');
+
+Route::view('/userAccount','userAccount')->middleware('auth')->name('userAccount');
+
 
 
 
