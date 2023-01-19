@@ -91,18 +91,18 @@
                             <form action="{{route('register-store')}}" method="post">
                                 @csrf
                                 <div class="form-outline mb-4">
-                                    <input name="loginReg" type="text" class="form-control" placeholder="Введите логин">
+                                    <input name="loginReg" type="text"  class="form-control" value="{{old('loginReg')}}" placeholder="Введите логин">
                                 </div>
 
                                 <!-- Email input -->
                                 <div class="form-outline mb-4">
-                                    <input name="emailReg" type="email" class="form-control" placeholder="Введите почту">
+                                    <input name="emailReg" type="email" class="form-control" value="{{old('emailReg')}}" placeholder="Введите почту">
 
                                 </div>
 
                                 <!-- Password input -->
                                 <div class="form-outline mb-4">
-                                    <input name="passwordReg" type="password" class="form-control" placeholder="Введите пароль">
+                                    <input name="passwordReg" type="password" class="form-control" value="{{old('passwordReg')}}" placeholder="Введите пароль">
                                 </div>
 
                                 <div class="text-center">
