@@ -129,20 +129,21 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                             </div>
                             <div class="modal-body">
-                                <form>
+                                <form action="{{route('login-store')}}" method="post">
+                                    @csrf
                                     <div class="form-outline mb-4">
-                                        <input name="loginAut" type="text" class="form-control" placeholder="Введите логин">
+                                        <input name="email" type="text" class="form-control" placeholder="Введите почту">
                                     </div>
 
                                     <!-- Password input -->
                                     <div class="form-outline mb-4">
-                                        <input name="passwordAut" type="password" class="form-control" placeholder="Введите пароль">
+                                        <input name="password" type="password" class="form-control" placeholder="Введите пароль">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Вернуться назад</a>
+                                        <button type="submit" class="btn btn-secondary">Войти</button>
                                     </div>
                                 </form>
-                            </div>
-                            <div class="modal-footer">
-                                <a type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Вернуться назад</a>
-                                <button type="submit" class="btn btn-secondary">Войти</button>
                             </div>
                         </div>
                     </div>
