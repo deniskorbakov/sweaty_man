@@ -1,7 +1,7 @@
 @extends('templates.doctypeHtml')
 
 
-@section('title')О нас@endsection
+@section('title')Авторизация@endsection
 
 @section('link')<link rel="stylesheet" href="/css/aut.css">@endsection
 
@@ -44,11 +44,6 @@
 
                     <div class="card bg-glass">
                         <div class="card-body px-4 py-5 px-md-5">
-                            <ul>
-{{--                                @foreach($errors->all() as $message)--}}
-{{--                                    <li>{{$message}}</li>--}}
-{{--                                @endforeach--}}
-                            </ul>
                             <form action="{{route('register-store')}}" method="post">
                                 @csrf
                                 <div class="form-outline mb-4">
@@ -115,6 +110,14 @@
                                         <div class="alert alert-danger mt-2">{{ $message }}</div>
                                         @enderror
                                     </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="true" name="checkbox" id="flexCheckChecked" checked>
+                                        <label class="form-check-label" for="flexCheckChecked">
+                                            Запомнить данные
+                                        </label>
+                                    </div>
+
                                     <div class="modal-footer">
                                         <a type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Вернуться назад</a>
                                         <button type="submit" class="btn btn-secondary">Войти</button>
