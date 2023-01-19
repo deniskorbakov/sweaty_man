@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 
 
 class RegisterController extends Controller
@@ -18,7 +19,7 @@ class RegisterController extends Controller
 
         $request->validate([
             'loginReg' => 'required|string',
-            'emailReg' => 'required|string|email|unique:users',
+            'emailReg' =>  'required|string|unique:users,email,id_to_ignore',
             'passwordReg' => 'required|min:8'
         ]);
 
