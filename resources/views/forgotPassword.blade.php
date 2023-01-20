@@ -8,6 +8,12 @@
         <h2 class="text-center mt-5">Форма для сброса пароля</h2>
 
         <form class="container mt-5" action="{{route('forgotPass')}}" method="post">
+            @if(session('status'))
+            <div class="alert alert-success" role="alert">
+                {{session('status')}}
+            </div>
+            @endif
+
             @csrf
 
             <div class="form-outline mb-4">
