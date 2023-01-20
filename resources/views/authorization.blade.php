@@ -96,6 +96,11 @@
                             <div class="modal-body">
                                 <form action="{{route('login-store')}}" method="post">
                                     @csrf
+                                    @if(session('status'))
+                                        <div class="alert alert-success" role="alert">
+                                            {{session('status')}}
+                                        </div>
+                                    @endif
                                     <div class="form-outline mb-4">
                                         <input name="email" type="email" class="form-control" value="{{old('email')}}" placeholder="Введите почту">
                                         @error('email')
