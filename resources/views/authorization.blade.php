@@ -97,7 +97,7 @@
                                 <form action="{{route('login-store')}}" method="post">
                                     @csrf
                                     <div class="form-outline mb-4">
-                                        <input name="email" type="text" class="form-control" value="{{old('email')}}" placeholder="Введите почту">
+                                        <input name="email" type="email" class="form-control" value="{{old('email')}}" placeholder="Введите почту">
                                         @error('email')
                                         <div class="alert alert-danger mt-2">{{ $message }}</div>
                                         @enderror
@@ -119,7 +119,7 @@
                                     </div>
 
                                     <div class="modal-footer">
-                                        <a type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Вернуться назад</a>
+                                        <a class="btn btn-danger" href="{{route('forgotPassword')}}">Сброс пароля</a>
                                         <button type="submit" class="btn btn-secondary">Войти</button>
                                     </div>
                                 </form>

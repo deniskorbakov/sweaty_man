@@ -5,6 +5,9 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ForgotController;
+use App\Http\Controllers\ResetController;
+use Illuminate\Auth\Notifications\ResetPassword;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,12 +43,17 @@ Route::post('/reviews/submit', [ReviewsController::class,'submit'])->name('revie
 Route::get('/reviews/all', [ReviewsController::class,'allData'])->name('reviews-data');
 Route::get('/reviews/all/{id}', [ReviewsController::class,'showData'])->name('reviews-show');
 
-Route::get('/authorization', [RegisterController::class,'create'])->name('authorization');
+Route::get('/authorization', [RegisterController::class,'create'])->middleware('guest')->name('authorization');
 
-Route::post('/register', [RegisterController::class,'store'])->name('register-store');
-Route::post('/login', [LoginController::class,'store'])->name('login-store');
+Route::post('/register', [RegisterController::class,'store'])->middleware('guest')->name('register-store');
+Route::post('/login', [LoginController::class,'store'])->middleware('guest')->name('login-store');
 
 Route::view('/userAccount','userAccount')->middleware('auth')->name('userAccount');
+
+Route::view('/forgotPassword','forgotPassword')->middleware('guest')->name('forgotPassword');
+Route::post('/forgotPass', [ForgotController::class,'forgot'])->middleware('guest')->name('forgotPass');
+
+Route::get('/reset-password', [ResetPasswordController::class,'create'])->middleware('guest')->name('password.reset');
 
 Route::post('/exit', [LoginController::class,'exit'])->middleware('auth')->name('exit');
 
