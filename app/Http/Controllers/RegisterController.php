@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -27,6 +28,8 @@ class RegisterController extends Controller
             'email' => $request->emailReg,
             'password' => Hash::make($request->passwordReg)
         ]);
+
+        event(new Registered($user));
 
         Auth::login($user);
 
