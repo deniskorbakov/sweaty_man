@@ -6,8 +6,8 @@ use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ForgotController;
-use App\Http\Controllers\ResetController;
-use Illuminate\Auth\Notifications\ResetPassword;
+use App\Http\Controllers\ResetPasswordController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +54,7 @@ Route::view('/forgotPassword','forgotPassword')->middleware('guest')->name('forg
 Route::post('/forgotPass', [ForgotController::class,'forgot'])->middleware('guest')->name('forgotPass');
 
 Route::get('/reset-password', [ResetPasswordController::class,'create'])->middleware('guest')->name('password.reset');
+Route::post('/reset-pass', [ResetPasswordController::class,'store'])->middleware('guest')->name('resetPass');
 
 Route::post('/exit', [LoginController::class,'exit'])->middleware('auth')->name('exit');
 
