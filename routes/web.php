@@ -86,6 +86,10 @@ Route::post('/email/verification-notification',function (Request $request){
     return back()->with('message','Verification link set!');
 })->middleware('auth')->name('verification.send');
 
+Route::get('/workout', function () {
+    return view('workout');
+})->name('workout');
+
 Route::view('/userAccount','userAccount')->middleware(['auth','verified'])->name('userAccount');
 
 Route::post('/exit', [LoginController::class,'exit'])->middleware('auth')->name('exit');
