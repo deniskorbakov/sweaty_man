@@ -48,87 +48,52 @@
             aria-labelledby="ex3-tab-1"
         >
 
-{{--            <div class="container-fluid mt-5">--}}
-{{--                <form class="form-inline">--}}
-
-{{--                        <label class="sr-only">Название тренировки</label>--}}
-{{--                        <input name="text" class="form-control-sm">--}}
-
-{{--                        <label class="sr-only ms-3">кол-во подходов</label>--}}
-{{--                        <input class="form-control-sm" id="counter-label" value="0">--}}
-{{--                        <button class="btn btn-outline-dark" type="button" onclick="incrementClick()">+</button>--}}
-{{--                        <button class="btn btn-outline-dark" type="button" onclick="resetCounter()">-</button>--}}
-
-{{--                        <label class="sr-only ms-3">кол-во повторений</label>--}}
-{{--                        <input class="form-control-sm" id="counter-label" value="0">--}}
-
-{{--                        <button class="btn btn-outline-dark" type="button" onclick="incrementClick()">+</button>--}}
-{{--                        <button class="btn btn-outline-dark" type="button" onclick="resetCounter()">-</button>--}}
-
-{{--                        <button class="btn btn-dark ms-3" type="submit">Добавить тренировку</button>--}}
-
-
-{{--                </form>--}}
-{{--            </div>--}}
-
             <div class="container">
-            <div class="row">
-                <div class="col mt-5">
+                <div class="row">
+                    <div class="col mt-5">
 
-                    <form>
+                        <form id="MyForm">
 
-                        <div class="container p-2">
-                        <input name="text" class="form-control" placeholder="Название тренировки">
+                            <div class="container p-2">
+                            <input name="text" class="form-control" placeholder="Название тренировки" id="name-workout">
+                            </div>
+
+                            <div class="container mt-2">
+                            <label class="sr-only">кол-во подходов</label>
+                            </div>
+                            <div class="container p-2">
+                            <input class="form-control-sm" id="counter-label" value="0">
+                            <button class="btn btn-outline-dark" type="button" onclick="incrementClick()">+</button>
+                            <button class="btn btn-outline-dark" type="button" onclick="resetCounter()">-</button>
+                            </div>
+
+                            <div class="container mt-2">
+                                <label class="sr-only ">кол-во повторений</label>
+                            </div>
+                            <div class="container p-2">
+                                <input class="form-control-sm" id="counter-label2" value="0">
+                                <button class="btn btn-outline-dark" type="button" onclick="incrementClick2()">+</button>
+                                <button class="btn btn-outline-dark" type="button" onclick="resetCounter2()">-</button>
+                            </div>
+
+                            <div class="container p-2">
+                                <button class="btn btn-dark" type="submit">Создать тренировку</button>
+                            </div>
+                        </form>
+
+                    </div>
+
+
+                    <div class="col">
+
+                        <div class="container">
+                            <div id="name">
+
+                            </div>
                         </div>
 
-                        <div class="container mt-2">
-                        <label class="sr-only">кол-во подходов</label>
-                        </div>
-                        <div class="container p-2">
-                        <input class="form-control-sm" id="counter-label" value="0">
-                        <button class="btn btn-outline-dark" type="button" onclick="incrementClick()">+</button>
-                        <button class="btn btn-outline-dark" type="button" onclick="resetCounter()">-</button>
-                        </div>
-
-                        <div class="container mt-2">
-                            <label class="sr-only ">кол-во повторений</label>
-                        </div>
-                        <div class="container p-2">
-                            <input class="form-control-sm" id="counter-label2" value="0">
-                            <button class="btn btn-outline-dark" type="button" onclick="incrementClick2()">+</button>
-                            <button class="btn btn-outline-dark" type="button" onclick="resetCounter2()">-</button>
-                        </div>
-
-                        <div class="container p-2">
-                            <button class="btn btn-dark" type="submit">Создать тренировку</button>
-                        </div>
-                    </form>
-
+                    </div>
                 </div>
-
-
-                <div class="col">
-
-                    <form class="form-inline">
-                        <label class="sr-only">Название тренировки</label>
-                        <input name="text" class="form-control-sm">
-
-                        <label class="sr-only ms-3">кол-во подходов</label>
-                        <input class="form-control-sm" id="counter-label" value="0">
-                        <button class="btn btn-outline-dark" type="button" onclick="incrementClick()">+</button>
-                        <button class="btn btn-outline-dark" type="button" onclick="resetCounter()">-</button>
-
-                        <label class="sr-only ms-3">кол-во повторений</label>
-                        <input class="form-control-sm" id="counter-label" value="0">
-
-                        <button class="btn btn-outline-dark" type="button" onclick="incrementClick()">+</button>
-                        <button class="btn btn-outline-dark" type="button" onclick="resetCounter()">-</button>
-
-                        <button class="btn btn-dark ms-3" type="submit">Добавить тренировку</button>
-                    </form>
-
-                </div>
-            </div>
             </div>
 
         </div>

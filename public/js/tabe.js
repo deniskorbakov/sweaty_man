@@ -27,3 +27,4 @@ function resetCounter2() {
 function updateDisplay2(val) {
     document.getElementById("counter-label2").value = val;
 }
+
