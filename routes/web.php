@@ -9,6 +9,7 @@ use App\Http\Controllers\ForgotController;
 use App\Http\Controllers\ResetPasswordController;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use App\Http\Controllers\WorkoutController;
 
 
 /*
@@ -89,6 +90,9 @@ Route::post('/email/verification-notification',function (Request $request){
 Route::get('/workout', function () {
     return view('workout');
 })->name('workout');
+
+Route::post('/workout/submit', [WorkoutController::class,'submit'])->name('workout-submit');
+Route::get('/workout/all', [WorkoutController::class,'Data']);
 
 Route::view('/userAccount','userAccount')->middleware(['auth','verified'])->name('userAccount');
 
