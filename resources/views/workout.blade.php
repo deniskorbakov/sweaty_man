@@ -77,6 +77,15 @@
                                 <button class="btn btn-outline-dark" type="button" onclick="resetCounter2()">-</button>
                             </div>
 
+                            <div class="container mt-2">
+                                <label class="sr-only ">Вес снаряда</label>
+                            </div>
+                            <div class="container p-2">
+                                <input class="form-control-sm i-4" name="repetition"  id="counter-label3" value="0">
+                                <button class="btn btn-outline-dark" type="button" onclick="incrementClick3()">+</button>
+                                <button class="btn btn-outline-dark" type="button" onclick="resetCounter3()">-</button>
+                            </div>
+
                             <div class="container-fluid p-2">
                                 <button class="btn btn-dark b-1" type="button" onclick="showWorkout()">Создать тренировку</button>
                             </div>
