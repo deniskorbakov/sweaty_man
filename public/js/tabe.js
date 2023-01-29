@@ -55,9 +55,8 @@ function showWorkout() {
         let data3 = document.querySelector('.i-3').value;
         let data4 = document.querySelector('.i-4').value;
 
-        //выбираем куда будут выводиться значения
-        const $col = document.querySelector('#col-2');
 
+        //проверка на кол-во подходов - зеленый закончил, а красный - нет
         let classoutput;
 
         if(data2 <= 0) {
@@ -67,18 +66,29 @@ function showWorkout() {
             classoutput = 'bg-danger';
         }
 
+        //выбираем куда будут выводиться значения
+        const $col2 = document.querySelector('#col-2');
+
+        let id = Math.random();
+
         //вывод тегов со значениями из ввода
         let out1 = '<h6 class="ms-1 mt-1">Название тренировки: <span class="text-muted p-2">' + data1 +'</span></h6>';
-        let out2 = '<h6 class="ms-1">Кол-во подходов: <span class="text-muted p-2">' + data2 +'</span></h6>';
+        let out2 = '<h6 class="ms-1">Кол-во подходов: <span class="text-muted p-2" id="'+ id +'">' + data2 +'</span></h6>';
         let out3 = '<h6 class="ms-1">Кол-во повторений: <span class="text-muted p-2">' + data3 +'</span></h6>';
         let out4 = '<h6 class="ms-1">Вес снаряда: <span class="text-muted p-2">' + data4 +'</span></h6>';
 
+        //добавление вывода в круглый вывод
         let outour = '<div class="container">'+ out1 + out2 + out3 + out4 + '</div>';
 
-        let column = '<li class="' + classoutput + ' bg-opacity-25 border border-dark border rounded d-flex justify-content-between lh-sm mt-2">' + outour + '</li>';
+
+        let buttonour = '<div class="mt-3"> <button class="btn btn-outline-dark" type="button" onclick="alert(window.onload = document.getElementById(id).innerHTML)">Закончить подход</button></div>';
+
+        let column = '<li class="' + classoutput + ' bg-opacity-25 border border-dark border rounded d-flex justify-content-between lh-sm mt-2">' + outour +'</li>';
 
         //вывод в блок
-        $col.insertAdjacentHTML('beforeend', column);
+        $col2.insertAdjacentHTML('beforeend', column);
+        $col2.insertAdjacentHTML('beforeend', buttonour);
+
 
 
 }
