@@ -30,29 +30,56 @@ function updateDisplay2(val) {
     document.getElementById("counter-label2").value = val;
 }
 
+//счетчик для выбора веса
+var counterVal3 = 0;
+
+function incrementClick3() {
+    updateDisplay3(++counterVal3);
+}
+
+function resetCounter3() {
+    counterVal3 = 0;
+    updateDisplay3(counterVal3);
+}
+
+function updateDisplay3(val) {
+    document.getElementById("counter-label3").value = val;
+}
+
 //вывод данных из формы
 function showWorkout() {
-    document.querySelector('.b-1').addEventListener('click', () => {
+
         //берем данные из ввода
         let data1 = document.querySelector('.i-1').value;
         let data2 = document.querySelector('.i-2').value;
         let data3 = document.querySelector('.i-3').value;
+        let data4 = document.querySelector('.i-4').value;
 
         //выбираем куда будут выводиться значения
         const $col = document.querySelector('#col-2');
 
+        let classoutput;
+
+        if(data2 <= 0) {
+            classoutput = 'bg-success';
+        }
+        else {
+            classoutput = 'bg-danger';
+        }
+
         //вывод тегов со значениями из ввода
-        let out1 = '<h6 class="">Название тренировки: <span class="text-muted p-2">' + data1 +'</span></h6>';
-        let out2 = '<h6 class="">Кол-во повторений: <span class="text-muted p-2">' + data2 +'</span></h6>';
-        let out3 = '<h6 class="">Кол-во повторений: <span class="text-muted p-2">' + data3 +'</span></h6>';
+        let out1 = '<h6 class="ms-1 mt-1">Название тренировки: <span class="text-muted p-2">' + data1 +'</span></h6>';
+        let out2 = '<h6 class="ms-1">Кол-во подходов: <span class="text-muted p-2">' + data2 +'</span></h6>';
+        let out3 = '<h6 class="ms-1">Кол-во повторений: <span class="text-muted p-2">' + data3 +'</span></h6>';
+        let out4 = '<h6 class="ms-1">Вес снаряда: <span class="text-muted p-2">' + data4 +'</span></h6>';
 
-        let outour = '<div>'+ out1 + out2 + out3 + '</div>';
+        let outour = '<div class="container">'+ out1 + out2 + out3 + out4 + '</div>';
 
-        let column = '<li class="list-group-item d-flex justify-content-between lh-sm">' + outour + '</li>';
+        let column = '<li class="' + classoutput + ' bg-opacity-25 border border-dark border rounded d-flex justify-content-between lh-sm mt-2">' + outour + '</li>';
 
-        $col.insertAdjacentHTML('beforeend', column);
         //вывод в блок
+        $col.insertAdjacentHTML('beforeend', column);
 
-    })
+
 }
 
