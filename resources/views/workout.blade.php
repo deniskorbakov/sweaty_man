@@ -99,7 +99,6 @@
                         <ul class="list-group mb-3" id="col-2">
 
                         </ul>
-
                     </div>
                 </div>
             </div>
