@@ -46,6 +46,8 @@ function updateDisplay3(val) {
     document.getElementById("counter-label3").value = val;
 }
 
+
+
 //вывод данных из формы
 function showWorkout() {
 
@@ -55,6 +57,11 @@ function showWorkout() {
         let data3 = document.querySelector('.i-3').value;
         let data4 = document.querySelector('.i-4').value;
 
+        let tagInput = "tagInput-" + Date.now();
+        let tagBackGround = "tagBack-" + Date.now();
+        let tagButton = "tagButton-" + Math.random();
+        let tagButton2 = "tagButton-" + Math.random();
+        let tagButton3 = "tagButton-" + Math.random();
 
         //проверка на кол-во подходов - зеленый закончил, а красный - нет
         let classoutput;
@@ -69,27 +76,48 @@ function showWorkout() {
         //выбираем куда будут выводиться значения
         const $col2 = document.querySelector('#col-2');
 
-        let id = Math.random();
 
         //вывод тегов со значениями из ввода
-        let out1 = '<h6 class="ms-1 mt-1">Название тренировки: <span class="text-muted p-2">' + data1 +'</span></h6>';
-        let out2 = '<h6 class="ms-1">Кол-во подходов: <span class="text-muted p-2" id="'+ id +'">' + data2 +'</span></h6>';
+        let out1 = '<h6 class="ms-1 mt-1">Название тренировки: <span class="text-muted p-2">' + data1 + '</span></h6>';
+        let out2 = '<h6 class="ms-1">Кол-во подходов: <span class="text-muted p-2" id="'+ tagInput +'">' + data2 +'</span></h6>';
         let out3 = '<h6 class="ms-1">Кол-во повторений: <span class="text-muted p-2">' + data3 +'</span></h6>';
         let out4 = '<h6 class="ms-1">Вес снаряда: <span class="text-muted p-2">' + data4 +'</span></h6>';
 
         //добавление вывода в круглый вывод
         let outour = '<div class="container">'+ out1 + out2 + out3 + out4 + '</div>';
+        let column = '<li class="' + classoutput + ' bg-opacity-25 border border-dark border rounded d-flex justify-content-between lh-sm mt-2" id="' + tagBackGround +'">' + outour +'</li>';
 
-
-        let buttonour = '<div class="mt-3"> <button class="btn btn-outline-dark" type="button" onclick="alert(window.onload = document.getElementById(id).innerHTML)">Закончить подход</button></div>';
-
-        let column = '<li class="' + classoutput + ' bg-opacity-25 border border-dark border rounded d-flex justify-content-between lh-sm mt-2">' + outour +'</li>';
+        let buttonour = '<button class="btn btn-dark" type="button" id="'+ tagButton +'">Закончить подход</button>';
+        let buttonour2 = '<button class="btn btn-outline-dark" type="button" id="'+ tagButton2 +'">Отменить подход</button>';
+        let buttonour3 = '<button class="btn btn-outline-dark" type="button" id="'+ tagButton3 +'">Удалить тренировку</button>';
+        let btnGroup = '<div class="btn-group mt-2" role="group" aria-label="Basic outlined example">' + buttonour + buttonour2 + buttonour3 +'</div>';
 
         //вывод в блок
         $col2.insertAdjacentHTML('beforeend', column);
-        $col2.insertAdjacentHTML('beforeend', buttonour);
+        $col2.insertAdjacentHTML('beforeend', btnGroup);
 
+
+        const button = document.getElementById(tagButton);
+
+        button.onclick = function() {
+            const input = document.getElementById(tagInput);
+            const backGround = document.getElementById(tagBackGround);
+
+
+                if (input.textContent <= 1) {
+                    alert('тренировка закончена');
+                    backGround.className = "bg-success bg-opacity-25 border border-dark border rounded d-flex justify-content-between lh-sm mt-2";
+                    input.innerHTML -= 1;
+                    button.parentNode.removeChild(button);
+
+                } else {
+                    backGround.className = "bg-danger bg-opacity-25 border border-dark border rounded d-flex justify-content-between lh-sm mt-2";
+                    input.innerHTML -= 1;
+                }
+
+        };
 
 
 }
+
 
