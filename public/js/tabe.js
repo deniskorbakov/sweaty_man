@@ -47,77 +47,115 @@ function updateDisplay3(val) {
 }
 
 
-
 //вывод данных из формы
 function showWorkout() {
 
-        //берем данные из ввода
-        let data1 = document.querySelector('.i-1').value;
-        let data2 = document.querySelector('.i-2').value;
-        let data3 = document.querySelector('.i-3').value;
-        let data4 = document.querySelector('.i-4').value;
+    //берем данные из ввода
+    let data1 = document.querySelector('.i-1').value;
+    let data2 = document.querySelector('.i-2').value;
+    let data3 = document.querySelector('.i-3').value;
+    let data4 = document.querySelector('.i-4').value;
 
-        let tagInput = "tagInput-" + Date.now();
-        let tagBackGround = "tagBack-" + Date.now();
-        let tagButton = "tagButton-" + Math.random();
-        let tagButton2 = "tagButton-" + Math.random();
-        let tagButton3 = "tagButton-" + Math.random();
+    let tagInput = "tagInput-" + Date.now();
+    let tagBackGround = "tagBack-" + Date.now();
+    let tagButton = "tagButton-" + Math.random();
+    let tagButton2 = "tagButton-" + Math.random();
+    let tagButton3 = "tagButton-" + Math.random();
+    let tagButtonGroup = "tagButton-" + Math.random();
 
-        //проверка на кол-во подходов - зеленый закончил, а красный - нет
-        let classoutput;
+    //проверка на кол-во подходов - зеленый закончил, а красный - нет
+    let classoutput;
 
-        if(data2 <= 0) {
-            classoutput = 'bg-success';
+    if(data2 <= 0) {
+        return  alert('Укажите кол-во подходов');
+    }
+    else if(data1.length < 5) {
+        return  alert('Название тренировки меньше 5 символов');
+    }
+    else if(data3 <= 0) {
+        return  alert('Укажите кол-во повторений');
+    }
+    else {
+        classoutput = 'bg-danger';
+    }
+
+    //выбираем куда будут выводиться значения
+    const $col2 = document.querySelector('#col-2');
+
+
+    //вывод тегов со значениями из ввода
+    let out1 = '<h6 class="ms-1 mt-1">Название тренировки: <span class="text-muted p-2">' + data1 + '</span></h6>';
+    let out2 = '<h6 class="ms-1">Кол-во подходов: <span class="text-muted p-2" id="'+ tagInput +'">' + data2 +'</span></h6>';
+    let out3 = '<h6 class="ms-1">Кол-во повторений: <span class="text-muted p-2">' + data3 +'</span></h6>';
+    let out4 = '<h6 class="ms-1">Вес снаряда: <span class="text-muted p-2">' + data4 +'</span></h6>';
+
+    //добавление вывода в круглый вывод
+    let outour = '<div class="container">'+ out1 + out2 + out3 + out4 + '</div>';
+    let column = '<li class="' + classoutput + ' bg-opacity-25 border border-dark border rounded d-flex justify-content-between lh-sm mt-2" id="' + tagBackGround +'">' + outour +'</li>';
+
+    let buttonour = '<button class="btn btn-dark" type="button" id="'+ tagButton +'">Закончить подход</button>';
+    let buttonour2 = '<button class="btn btn-outline-dark" type="button" id="'+ tagButton2 +'">Отменить подход</button>';
+    let buttonour3 = '<button class="btn btn-outline-dark" type="button" id="'+ tagButton3 +'">Удалить тренировку</button>';
+    let btnGroup = '<div class="btn-group mt-2" role="group" aria-label="Basic outlined example" id="' + tagButtonGroup + '">' + buttonour2 + buttonour3 + buttonour +'</div>';
+
+    //вывод в блок
+    $col2.insertAdjacentHTML('beforeend', column);
+    $col2.insertAdjacentHTML('beforeend', btnGroup);
+
+    const button = document.getElementById(tagButton);
+
+    button.onclick = function() {
+        const input = document.getElementById(tagInput);
+        const backGround = document.getElementById(tagBackGround);
+
+
+            if (input.textContent <= 1) {
+                alert('тренировка закончена');
+                backGround.className = "bg-success bg-opacity-25 border border-dark border rounded d-flex justify-content-between lh-sm mt-2";
+                input.innerHTML -= 1;
+                button.parentNode.removeChild(button);
+
+            } else {
+                backGround.className = "bg-danger bg-opacity-25 border border-dark border rounded d-flex justify-content-between lh-sm mt-2";
+                input.innerHTML -= 1;
+            }
+
+    };
+
+    const button2 = document.getElementById(tagButton2);
+
+    button2.onclick = function() {
+        const input = document.getElementById(tagInput);
+        const btnGroup = document.getElementById(tagButtonGroup);
+        const backGround = document.getElementById(tagBackGround);
+
+
+
+        if(input.innerHTML >= data2) {
+            return alert('Нельзя больше отменить');
         }
         else {
-            classoutput = 'bg-danger';
+
+            input.textContent ++;
+            btnGroup.appendChild(button);
+            backGround.className = "bg-danger bg-opacity-25 border border-dark border rounded d-flex justify-content-between lh-sm mt-2";
         }
 
-        //выбираем куда будут выводиться значения
-        const $col2 = document.querySelector('#col-2');
 
 
-        //вывод тегов со значениями из ввода
-        let out1 = '<h6 class="ms-1 mt-1">Название тренировки: <span class="text-muted p-2">' + data1 + '</span></h6>';
-        let out2 = '<h6 class="ms-1">Кол-во подходов: <span class="text-muted p-2" id="'+ tagInput +'">' + data2 +'</span></h6>';
-        let out3 = '<h6 class="ms-1">Кол-во повторений: <span class="text-muted p-2">' + data3 +'</span></h6>';
-        let out4 = '<h6 class="ms-1">Вес снаряда: <span class="text-muted p-2">' + data4 +'</span></h6>';
+    };
 
-        //добавление вывода в круглый вывод
-        let outour = '<div class="container">'+ out1 + out2 + out3 + out4 + '</div>';
-        let column = '<li class="' + classoutput + ' bg-opacity-25 border border-dark border rounded d-flex justify-content-between lh-sm mt-2" id="' + tagBackGround +'">' + outour +'</li>';
+    const button3 = document.getElementById(tagButton3);
 
-        let buttonour = '<button class="btn btn-dark" type="button" id="'+ tagButton +'">Закончить подход</button>';
-        let buttonour2 = '<button class="btn btn-outline-dark" type="button" id="'+ tagButton2 +'">Отменить подход</button>';
-        let buttonour3 = '<button class="btn btn-outline-dark" type="button" id="'+ tagButton3 +'">Удалить тренировку</button>';
-        let btnGroup = '<div class="btn-group mt-2" role="group" aria-label="Basic outlined example">' + buttonour + buttonour2 + buttonour3 +'</div>';
+    button3.onclick = function() {
+        const btnGroup = document.getElementById(tagButtonGroup);
+        const backGround = document.getElementById(tagBackGround);
 
-        //вывод в блок
-        $col2.insertAdjacentHTML('beforeend', column);
-        $col2.insertAdjacentHTML('beforeend', btnGroup);
+        btnGroup.parentNode.removeChild(btnGroup);
+        backGround.parentNode.removeChild(backGround);
 
 
-        const button = document.getElementById(tagButton);
-
-        button.onclick = function() {
-            const input = document.getElementById(tagInput);
-            const backGround = document.getElementById(tagBackGround);
-
-
-                if (input.textContent <= 1) {
-                    alert('тренировка закончена');
-                    backGround.className = "bg-success bg-opacity-25 border border-dark border rounded d-flex justify-content-between lh-sm mt-2";
-                    input.innerHTML -= 1;
-                    button.parentNode.removeChild(button);
-
-                } else {
-                    backGround.className = "bg-danger bg-opacity-25 border border-dark border rounded d-flex justify-content-between lh-sm mt-2";
-                    input.innerHTML -= 1;
-                }
-
-        };
-
-
+    };
 }
 
 
