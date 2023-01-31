@@ -51,10 +51,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col mt-5">
-
-{{--                        <form id="MyForm" action="{{route('workout-submit')}}" method="post">--}}
-
-{{--                            @csrf--}}
                             <div class="container p-2">
                             <input type="text" name="name"  class="form-control i-1" placeholder="Название тренировки" id="name-workout">
                             </div>
@@ -89,8 +85,6 @@
                             <div class="container-fluid p-2">
                                 <button class="btn btn-dark b-1" type="button" onclick="showWorkout()">Создать тренировку</button>
                             </div>
-{{--                        </form>--}}
-
                     </div>
 
 
