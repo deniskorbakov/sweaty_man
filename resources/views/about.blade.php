@@ -11,66 +11,51 @@
                 <div class="col-md-6 col-lg-4 mb-4">
                     <h4 class="mb-3 text-black">О чем проекте</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Amet at dolore excepturi illo illum, in
-                        odio provident voluptatem voluptates.
-                        Aperiam deleniti enim eveniet ipsum mollitia
-                        nam perspiciatis quos repudiandae suscipit!
+                        Проект был создан с целью помочь людям с тренировочным процессом,
+                        так как бывают такие случаи, что когда забываешь сделал ты подход или нет -
+                        сайт всегда подскажет на каком ты подходе и сколько осталось еще сделать.
+                        Так же очень удобно видеть свой план на тренировку и сконцентрироваться на рабочий процесс,
+                        а не на запоминание сколько подходов сделано.
                     </p>
                 </div>
 
                 <div class="col-md-6 col-lg-4 mb-4">
                     <h4 class="mb-3 text-black">Кто разрабатывал</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Amet at dolore excepturi illo illum, in
-                        odio provident voluptatem voluptates.
-                        Aperiam deleniti enim eveniet ipsum mollitia
-                        nam perspiciatis quos repudiandae suscipit!
+                        Лучший программист в Коралева 12а - Денис Корбаков
                     </p>
                 </div>
 
                 <div class="col-md-6 col-lg-4 mb-4">
                     <h4 class="mb-3 text-black">Кому он может помочь</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Amet at dolore excepturi illo illum, in
-                        odio provident voluptatem voluptates.
-                        Aperiam deleniti enim eveniet ipsum mollitia
-                        nam perspiciatis quos repudiandae suscipit!
+                        Всем людям, которые занимаются спортом и отдают себе отчет о том,
+                        что нужно так же с упорством подходить к плану тренировок и четко видеть -
+                        как проходит тренировочный процесс
                     </p>
                 </div>
 
                 <div class="col-md-6 col-lg-4 mb-4">
                     <h4 class="mb-3 text-black">Главная цель проекта</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Amet at dolore excepturi illo illum, in
-                        odio provident voluptatem voluptates.
-                        Aperiam deleniti enim eveniet ipsum mollitia
-                        nam perspiciatis quos repudiandae suscipit!
+                        Дать всем людям возможность тренироваться с полным удовольствием,
+                        не отвлекаясь на другие проблемы, все проблемы с планом тренировок -
+                        я возложил на этот прекрасный сайт
                     </p>
                 </div>
 
                 <div class="col-md-6 col-lg-4 mb-4">
                     <h4 class="mb-3 text-black">Платно ли это</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Amet at dolore excepturi illo illum, in
-                        odio provident voluptatem voluptates.
-                        Aperiam deleniti enim eveniet ipsum mollitia
-                        nam perspiciatis quos repudiandae suscipit!
+                        Нет, совершенно бесплатный продукт для всех желающих
                     </p>
                 </div>
 
                 <div class="col-md-6 col-lg-4 mb-4">
                     <h4 class="mb-3 text-black">Если я заметил ошибку на сайте</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Amet at dolore excepturi illo illum, in
-                        odio provident voluptatem voluptates.
-                        Aperiam deleniti enim eveniet ipsum mollitia
-                        nam perspiciatis quos repudiandae suscipit!
+                        На сайте есть контактная форма, где вы можете оставить свои пожелание или написать
+                        проблемы, которые присутствуют на сайте
                     </p>
                 </div>
             </div>
