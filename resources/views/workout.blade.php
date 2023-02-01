@@ -33,7 +33,7 @@
                                 <label class="sr-only ">Вес снаряда</label>
                             </div>
                             <div class="container p-2">
-                                <input class="form-control-sm i-4" name="repetition"  id="counter-label3" value="0">
+                                <input class="form-control-sm i-4" name="projectileWeight"  id="counter-label3" value="0">
                                 <button class="btn btn-outline-dark" type="button" onclick="incrementClick3()">+</button>
                                 <button class="btn btn-outline-dark" type="button" onclick="resetCounter3()">-</button>
                             </div>
