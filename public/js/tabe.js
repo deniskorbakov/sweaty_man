@@ -52,9 +52,9 @@ function showWorkout() {
 
     //берем данные из ввода
     let data1 = document.querySelector('.i-1').value;
-    let data2 = document.querySelector('.i-2').value;
-    let data3 = document.querySelector('.i-3').value;
-    let data4 = document.querySelector('.i-4').value;
+    let data2 = parseInt(document.querySelector('.i-2').value);
+    let data3 = parseInt(document.querySelector('.i-3').value);
+    let data4 = parseInt(document.querySelector('.i-4').value);
 
     let tagInput = "tagInput-" + Date.now();
     let tagBackGround = "tagBack-" + Date.now();
@@ -77,6 +77,11 @@ function showWorkout() {
     }
     else {
         classoutput = 'bg-danger';
+    }
+
+
+     if(isNaN(data2) || isNaN(data3) || isNaN(data4) ) {
+        return alert('В одном из 3 полей присутствуют буквы');
     }
 
     //выбираем куда будут выводиться значения
