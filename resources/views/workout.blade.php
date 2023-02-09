@@ -54,6 +54,5 @@
 @endsection
 
 <script src="js/tabe.js"></script>
-<script src="js/SendBd.js"></script>
 
 
