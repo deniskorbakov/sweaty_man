@@ -102,10 +102,15 @@ function showWorkout() {
     let buttonour2 = '<button class="btn btn-outline-dark" type="button" id="'+ tagButton2 +'">Отменить подход</button>';
     let buttonour3 = '<button class="btn btn-outline-dark" type="button" id="'+ tagButton3 +'">Удалить тренировку</button>';
     let btnGroup = '<div class="btn-group mt-2" role="group" aria-label="Basic outlined example" id="' + tagButtonGroup + '">' + buttonour2 + buttonour3 + buttonour +'</div>';
+    let submit = '<div class="btn btn-secondary mt-2 mb-4 form-control" type="submit" id="submit">Сохранить тренировку</div>';
 
     //вывод в блок
     $col2.insertAdjacentHTML('beforeend', column);
     $col2.insertAdjacentHTML('beforeend', btnGroup);
+
+    if(!document.getElementById("submit")) {
+        $col2.insertAdjacentHTML('afterend', submit);
+    }
 
     const button = document.getElementById(tagButton);
 
